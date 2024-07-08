@@ -1,7 +1,12 @@
 import Link from "next/link";
 import React from "react";
 
-import { FaGithub, FaLinkedinIn, FaInstagram, FaFacebook } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedinIn,
+  FaInstagram,
+  FaFacebook
+} from "react-icons/fa";
 
 type SocialsProps = {
   containerStyles: string;
@@ -29,7 +34,13 @@ const Socials: React.FC<SocialsProps> = ({ containerStyles, iconStyles }) => {
   return (
     <div className={containerStyles}>
       {socials.map((social, index) => (
-        <Link className={iconStyles} key={index} href={social.url} target="_blank" rel="noreferrer">
+        <Link
+          className={iconStyles}
+          key={index}
+          href={social.url}
+          target="_blank"
+          rel="noreferrer"
+        >
           {social.icon}
         </Link>
       ))}

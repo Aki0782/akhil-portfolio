@@ -16,7 +16,10 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
       <div key={pathname}>
         <motion.div
           initial={{ opacity: 1 }}
-          animate={{ opacity: 0, transition: { delay: 1, duration: 0.4, ease: easeInOut } }}
+          animate={{
+            opacity: 0,
+            transition: { delay: 1, duration: 0.4, ease: easeInOut }
+          }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
           className="h-screen w-screen fixed top-0 bg-primary pointer-events-none"
