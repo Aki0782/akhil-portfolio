@@ -30,7 +30,7 @@ const Photo = () => {
         >
           <Image
             fill
-            src="/assets/akhil.png "
+            src="/assets/me.png "
             alt="photo"
             priority
             quality={100}
