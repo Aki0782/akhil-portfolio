@@ -4,7 +4,7 @@ const experience = {
   icon: "/assets/badge.svg",
   title: "My experience",
   description:
-    "I have experience in front-end and back-end development, and I am always looking to learn new technologies and improve my skills.",
+    "With eight years of Frontend Development experience, I have honed my expertise in technologies such as React, TypeScript, Redux, React Native, React Query, AWS, and other UI coding languages. My career has seen me take on leadership roles, mentoring junior developers and conducting thorough code reviews and debugging. I have also excelled as a Frontend Architect, designing effective and scalable solutions. My excellent communication skills in English have consistently facilitated clear and productive interactions with team members and stakeholders.",
   items: [
     {
       company: "MBO Partners Inc.",
@@ -37,7 +37,7 @@ const Experience = () => {
   return (
     <div className="flex flex-col gap-[30px] text-center xl:text-left">
       <h3 className="text-4xl font-bold">{experience.title}</h3>
-      <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+      <p className="w-full text-white/60 mx-auto xl:mx-0">
         {experience.description}
       </p>
       <ScrollArea className="h-[400px]">
