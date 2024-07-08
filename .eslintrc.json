@@ -16,7 +16,7 @@
         "arrowParens": "always",
         "semi": true,
         "trailingComma": "none",
-        "printWidth": 110
+        "printWidth": 80
       }
     ]
   }
