@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import { Button } from "../components/ui/button";
 import { FiDownload } from "react-icons/fi";
 import Socials from "../components/Socials";
@@ -8,11 +8,6 @@ import Photo from "../components/Photo";
 import Stats from "../components/Stats";
 
 const Home = () => {
-  useEffect(() => {
-    setTimeout(() => {
-      alert("Welcome to my website. This is still a work in progress.");
-    }, 3000);
-  }, []);
   return (
     <section className="h-full">
       <div className="container mx-auto h-full">

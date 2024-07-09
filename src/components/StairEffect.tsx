@@ -2,11 +2,16 @@
 
 import { AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useEffect } from "react";
 import Stair from "./Stair";
 
 const StairEffect = () => {
   const pathname = usePathname();
+  useEffect(() => {
+    setTimeout(() => {
+      alert("Welcome to my website. This is still a work in progress.");
+    }, 3000);
+  }, []);
   return (
     <>
       <AnimatePresence mode="wait">
