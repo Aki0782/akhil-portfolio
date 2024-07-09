@@ -9,7 +9,9 @@ import Stats from "../components/Stats";
 
 const Home = () => {
   useEffect(() => {
-    alert("Welcome to my website. This is still a work in progress.");
+    setTimeout(() => {
+      alert("Welcome to my website. This is still a work in progress.");
+    }, 3000);
   }, []);
   return (
     <section className="h-full">
