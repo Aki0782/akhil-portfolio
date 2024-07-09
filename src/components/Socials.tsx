@@ -15,19 +15,23 @@ type SocialsProps = {
 const socials = [
   {
     icon: <FaGithub />,
-    url: "https://github.com/Aki0782"
+    url: "https://github.com/Aki0782",
+    name: "github"
   },
   {
     icon: <FaLinkedinIn />,
-    url: "https://www.linkedin.com/in/Aki07/"
+    url: "https://www.linkedin.com/in/Aki07/",
+    name: "linkedin"
   },
   {
     icon: <FaInstagram />,
-    url: "https://www.instagram.com/humourjunkie/"
+    url: "https://www.instagram.com/humourjunkie/",
+    name: "instagram"
   },
   {
     icon: <FaFacebook />,
-    url: "https://www.facebook.com/Akiakina0/"
+    url: "https://www.facebook.com/Akiakina0/",
+    name: "facebook"
   }
 ];
 const Socials: React.FC<SocialsProps> = ({ containerStyles, iconStyles }) => {
@@ -40,6 +44,7 @@ const Socials: React.FC<SocialsProps> = ({ containerStyles, iconStyles }) => {
           href={social.url}
           target="_blank"
           rel="noreferrer"
+          aria-label={social.name}
         >
           {social.icon}
         </Link>
