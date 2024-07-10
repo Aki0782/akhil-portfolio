@@ -12,10 +12,10 @@ const links = [
     name: "services",
     href: "/services"
   },
-  {
-    name: "Work",
-    href: "/work"
-  },
+  // {
+  //   name: "Work",
+  //   href: "/work"
+  // },
   {
     name: "Resume",
     href: "/resume"
