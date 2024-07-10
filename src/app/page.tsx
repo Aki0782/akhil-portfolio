@@ -26,6 +26,11 @@ const Home = () => {
             {/* btn and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <Button
+                onClick={() =>
+                  window.open(
+                    "https://drive.google.com/file/d/1a2VwG2wOYKz258z3pzz0ppk2JlJqfRZ6/view?usp=sharing"
+                  )
+                }
                 variant="outline"
                 size="lg"
                 className="uppercase flex gap-2"
