@@ -11,8 +11,8 @@ const links = [
     href: "/"
   },
   {
-    name: "services",
-    href: "/services"
+    name: "pov",
+    href: "/pov"
   },
   // {
   //   name: "Work",
@@ -53,7 +53,7 @@ const MobileNav = () => {
               <SheetClose asChild key={i}>
                 <Link
                   href={link.href}
-                  className={`${pathname === link.href && "text-accent border-b-2 border-accent"} capitalize text-xl hover:text-accent transition-all `}
+                  className={`${pathname === link.href && "text-accent border-b-2 border-accent"} ${link.href === "/pov" ? "uppercase" : "capitalize"} text-xl hover:text-accent transition-all `}
                 >
                   {link.name}
                 </Link>

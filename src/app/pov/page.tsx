@@ -7,26 +7,30 @@ import { BsArrowDownRight } from "react-icons/bs";
 const services = [
   {
     num: "01",
-    title: "Web Development",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "Frontend Development",
+    description:
+      "Led the development and implementation of innovative React Micro Frontend Frameworks, significantly enhancing scalability and development efficiency.",
     href: ""
   },
   {
     num: "02",
     title: "Mobile Development",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "Developed high-performance mobile applications using React Native, improving user experience and integrating advanced features such as seamless API management and state-of-the-art design systems.",
     href: ""
   },
   {
     num: "03",
     title: "Backend Development",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "Designed and implemented robust backend solutions using Node.js, Express JS, and MongoDB, ensuring efficient API management and seamless integration with frontend applications.",
     href: ""
   },
   {
     num: "04",
     title: "SEO",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "Optimized web applications for SEO, improving search engine rankings and visibility through efficient coding practices, metadata management, and performance enhancements.",
     href: ""
   }
 ];
