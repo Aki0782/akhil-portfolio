@@ -74,7 +74,7 @@ const Contact = () => {
       const sendEmail = await emailjs.sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
-        formRef.current,
+        formRef.current || "",
         {
           publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
         }
