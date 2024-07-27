@@ -9,26 +9,26 @@ const experience = {
     {
       company: "MBO Partners Inc.",
       postition: "Lead Product Engineer",
-      duration: "Sept 2021 - Mar 2024"
+      duration: "Sept 2022 - Mar 2024"
     },
     {
       company: "MBO Partners Inc.",
-      postition: "Lead Product Engineer",
-      duration: "Sept 2021 - Mar 2024"
+      postition: "Senior Product Engineer",
+      duration: "Sept 2021 - Sept 2022"
     },
     {
-      company: "MBO Partners Inc.",
-      postition: "Lead Product Engineer",
-      duration: "Sept 2021 - Mar 2024"
+      company: "Thought Clan Technologies",
+      postition: "Senior Software Engineer",
+      duration: "Aug 2019 - Aug 2021"
     },
     {
-      company: "MBO Partners Inc.",
-      postition: "Lead Product Engineer",
-      duration: "Sept 2021 - Mar 2024"
+      company: "iDev Research Labs Ltd.",
+      postition: "Front End Web Developer",
+      duration: "Feb 2019 - Jul 2019"
     },
     {
-      company: "MBO Partners Inc.",
-      postition: "Lead Product Engineer",
+      company: "2Degrees",
+      postition: "Jr. Frontend Developer",
       duration: "Sept 2021 - Mar 2024"
     }
   ]
