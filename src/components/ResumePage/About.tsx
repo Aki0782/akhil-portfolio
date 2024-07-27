@@ -2,7 +2,7 @@ import React from "react";
 const about = {
   title: "About Me",
   description:
-    "I am a software engineer with a passion for building web applications. I have experience in front-end and back-end development, and I am always looking to learn new technologies and improve my skills.",
+    "I am a self taught software developer with a passion for building web applications. I have experience in front-end and back-end development, and I am always looking to learn new technologies and improve my skills.",
   info: [
     {
       title: "Name",
