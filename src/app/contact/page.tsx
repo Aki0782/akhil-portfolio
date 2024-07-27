@@ -47,6 +47,7 @@ type formDataProps = {
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>();
+  const [isMailSent, setIsMailSent] = useState(false);
   const [formData, setFormData] = useState<formDataProps>({
     firstName: "",
     lastName: "",
@@ -59,6 +60,7 @@ const Contact = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
+    setIsMailSent(false);
     setFormData((prevState) => ({
       ...prevState,
       [name]: value
@@ -77,7 +79,16 @@ const Contact = () => {
           publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
         }
       );
-      console.log(sendEmail);
+      if (sendEmail.status === 200 && sendEmail.text === "OK") {
+        setIsMailSent(true);
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phoneNumber: "",
+          message: ""
+        });
+      }
     } catch (error) {
       console.log("Failed to send email: ", error);
     }
@@ -171,6 +182,11 @@ const Contact = () => {
                 Send Message
               </Button>
             </form>
+            {isMailSent && (
+              <div className="text-center py-8">
+                <p className="text-white">Email sent successfully!</p>
+              </div>
+            )}
           </div>
           {/* info */}
           {/* <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0 ">
