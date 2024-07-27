@@ -72,11 +72,11 @@ const Contact = () => {
 
     try {
       const sendEmail = await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
         formRef.current,
         {
-          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
         }
       );
       if (sendEmail.status === 200 && sendEmail.text === "OK") {
