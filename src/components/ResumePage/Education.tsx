@@ -12,19 +12,14 @@ const education = {
       duration: "2015 - 2016"
     },
     {
-      institution: "Royal Business College, New Zealand",
-      degree: "Information Technology",
-      duration: "2015 - 2016"
+      institution: "Mahathma Gandhi Univeristy, India",
+      degree: "Master of Science - CS",
+      duration: "2013 - 2015"
     },
     {
-      institution: "Royal Business College, New Zealand",
-      degree: "Information Technology",
-      duration: "2015 - 2016"
-    },
-    {
-      institution: "Royal Business College, New Zealand",
-      degree: "Information Technology",
-      duration: "2015 - 2016"
+      institution: "Mahathma Gandhi Univeristy, India",
+      degree: "Bachelor of Science - Physics",
+      duration: "2009 - 2012"
     }
   ]
 };
