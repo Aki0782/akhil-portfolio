@@ -1,40 +1,87 @@
 "use client";
 
-import React from "react";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
-const info = [
-  {
-    icon: <FaPhoneAlt />,
-    title: "Phone",
-    description: "+1 (782)-778-9931"
-  },
-  {
-    icon: <FaEnvelope />,
-    title: "Email",
-    description: "youremail@email.com"
-  },
-  {
-    icon: <FaMapMarkerAlt />,
-    title: "Address",
-    description: "1234 Street Name, City, State 12345"
-  }
-];
+// import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+
+// const info = [
+//   {
+//     icon: <FaPhoneAlt />,
+//     title: "Phone",
+//     description: "+1 (782)-778-9931"
+//   },
+//   {
+//     icon: <FaEnvelope />,
+//     title: "Email",
+//     description: "youremail@email.com"
+//   },
+//   {
+//     icon: <FaMapMarkerAlt />,
+//     title: "Address",
+//     description: "1234 Street Name, City, State 12345"
+//   }
+// ];
 
 import { motion } from "framer-motion";
 import { Input } from "../../components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue
-} from "../../components/ui/select";
+// import {
+//   Select,
+//   SelectContent,
+//   SelectGroup,
+//   SelectItem,
+//   SelectLabel,
+//   SelectTrigger,
+//   SelectValue
+// } from "../../components/ui/select";
 import { Textarea } from "../../components/ui/textarea";
 import { Button } from "../../components/ui/button";
+
+type formDataProps = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  message: string;
+};
+
 const Contact = () => {
+  const formRef = useRef<HTMLFormElement>();
+  const [formData, setFormData] = useState<formDataProps>({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    message: ""
+  });
+
+  const formHandler = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const submitHandler: React.FormEventHandler<HTMLFormElement> = async (e) => {
+    e.preventDefault();
+
+    try {
+      const sendEmail = await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        {
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        }
+      );
+      console.log(sendEmail);
+    } catch (error) {
+      console.log("Failed to send email: ", error);
+    }
+  };
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -53,23 +100,52 @@ const Contact = () => {
           {/* form */}
           <div className="xl:h-[54%] order-2 xl:order-none">
             <form
+              ref={formRef}
+              onSubmit={submitHandler}
               className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
               action=""
             >
               <h3 className="text-4xl text-accent">Let&apos;s work together</h3>
               <p className="text-white/60">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum
-                quia labore molestiae facere nihil ab. Sint odit.
+                Contact to hire me for your projects or to arrange an interview.
               </p>
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstName" placeholder="Firstname" />
-                <Input type="lastname" placeholder="Lastname" />
-                <Input type="email" placeholder="Email address" />
-                <Input type="phone number" placeholder="Phone number" />
+                <Input
+                  type="firstName"
+                  name="firstName"
+                  placeholder="First Name"
+                  value={formData?.firstName}
+                  onChange={formHandler}
+                  required
+                />
+                <Input
+                  type="lastname"
+                  name="lastName"
+                  placeholder="Last Name"
+                  value={formData?.lastName}
+                  onChange={formHandler}
+                  required
+                />
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="Email Address"
+                  value={formData?.email}
+                  onChange={formHandler}
+                  required
+                />
+                <Input
+                  type="number"
+                  name="phoneNumber"
+                  placeholder="Phone Number"
+                  value={formData?.phoneNumber}
+                  onChange={formHandler}
+                  required
+                />
               </div>
               {/* Select */}
-              <Select>
+              {/* <Select>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
@@ -81,8 +157,15 @@ const Contact = () => {
                     <SelectItem value="mst">SEO</SelectItem>
                   </SelectGroup>
                 </SelectContent>
-              </Select>
-              <Textarea className="h-[200px]" placeholder="Type your message" />
+              </Select> */}
+              <Textarea
+                className="h-[200px]"
+                placeholder="Type your message"
+                name="message"
+                value={formData?.message}
+                onChange={formHandler}
+                required
+              />
               {/* button */}
               <Button size="default" className="max-w-40">
                 Send Message
@@ -90,7 +173,7 @@ const Contact = () => {
             </form>
           </div>
           {/* info */}
-          <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0 ">
+          {/* <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0 ">
             <ul className="flex flex-col gap-10">
               {info.map((item, i) => {
                 return (
@@ -106,7 +189,7 @@ const Contact = () => {
                 );
               })}
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
     </motion.section>
