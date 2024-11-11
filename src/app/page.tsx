@@ -28,7 +28,7 @@ const Home = () => {
               <Button
                 onClick={() =>
                   window.open(
-                    "https://drive.google.com/file/d/1a2VwG2wOYKz258z3pzz0ppk2JlJqfRZ6/view?usp=sharing"
+                    "https://drive.google.com/file/d/17PiWQqxe7GomELiY5ZZF6Qi2m_EcIXGr/view?usp=sharing"
                   )
                 }
                 variant="outline"
